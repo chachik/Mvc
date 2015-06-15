@@ -488,6 +488,7 @@ namespace Microsoft.AspNet.Mvc.ApplicationModels
             var action = Assert.Single(actions);
             Assert.Contains("GET", action.HttpMethods);
             Assert.Contains("POST", action.HttpMethods);
+            Assert.Contains("HEAD", action.HttpMethods);
             Assert.Equal("Details", action.ActionName);
             Assert.Null(action.AttributeRouteModel);
         }
@@ -1094,6 +1095,7 @@ namespace Microsoft.AspNet.Mvc.ApplicationModels
 
             [HttpPost]
             [HttpGet]
+            [HttpHead]
             public void Details() { }
 
             [HttpGet]
